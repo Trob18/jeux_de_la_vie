@@ -16,7 +16,7 @@ void initializeGrid() {
     std::srand(std::time(0));
     for (int x = 0; x < gridWidth; ++x) {
         for (int y = 0; y < gridHeight; ++y) {
-            grid[x][y] = std::rand() % 2;  // Randomly initialize cells as alive or dead
+            grid[x][y] = std::rand() % 2; //  Randomly initialize cells as alive or dead
         }
     }
 }
@@ -56,3 +56,5 @@ int main() {
 
     return 0;
 }
+
+

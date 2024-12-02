@@ -1,3 +1,4 @@
+
 all: main
 
 CXX = clang++
@@ -14,3 +15,9 @@ main-debug: $(SRCS) $(HEADERS)
 
 clean:
 	rm -f main main-debug
+
+
+
+
+
+
