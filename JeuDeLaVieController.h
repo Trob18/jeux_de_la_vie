@@ -6,14 +6,15 @@ class Vue;
 #ifndef JEUDELAVIECONTROLLER_H 
 #define JEUDELAVIECONTROLLER_H
 
-class JeuDeLaVieController:public Grille {
+class JeuDeLaVieController{
     private :
         Grille grille;
-        Vue *vue;
-        int temps_iteration;
+    
     public: 
         void startSimulation();
         void ouvertureFichier(const std::string &chemin);
+        void setCellule(int x, int y, bool etat);
+        void afficherGrille();
 
 };
 

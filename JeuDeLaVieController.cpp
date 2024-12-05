@@ -10,25 +10,30 @@ void JeuDeLaVieController::ouvertureFichier(const std::string &chemin){
         std::cerr << "Erreur : impossible d'ouvrir le fichier.\n";
     }
    
-
+    int largeur;
+    int hauteur;
     fichier >> hauteur >> largeur;
-    matrice.resize(hauteur, std::vector<int>(largeur));
+    grille.initialiser(largeur,hauteur);
+    
    
 
     for (int i = 0; i < hauteur; i++) {
         for (int j = 0; j < largeur; j++) {
-            fichier >> matrice[i][j];
+            int etat;
+            fichier >> etat;
+            grille.setCellule(i, j, etat);
         }
     }
 
-    //  for (const auto& ligne : matrice) {
-    //     for (const auto& valeur : ligne) {
-    //         std::cout << valeur << " ";
-    //     }
-    //     std::cout << "\n";
-    // }
-
     fichier.close();
 
+}
 
+
+void JeuDeLaVieController::setCellule(int x, int y, bool etat){
+    grille.setCellule(x,y,etat);
+}
+
+void JeuDeLaVieController::afficherGrille(){
+    grille.afficher();
 }
