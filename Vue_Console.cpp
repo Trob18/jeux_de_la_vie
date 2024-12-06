@@ -1,16 +1,12 @@
 #include "Vue_Console.h"
+#include <iostream>
 
-
-
-
-
-
-void Vue_Console::affichage(const vector<vector<int>>& grid) {
-        for (const auto& row : grid) {
-            for (int cell : row) {
-                cout << (cell ? "#" : ".") << " ";
-            }
-            cout << endl;
+void Vue_Console::affichage(const std::vector<std::vector<int>>& matrice) {
+    for (const auto& row : matrice) {
+        for (int cell : row) {
+            std::cout <<cell<< " ";
         }
-        cout << endl;
+        std::cout << std::endl;
     }
+    std::cout << std::endl;
+}

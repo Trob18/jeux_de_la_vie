@@ -1,5 +1,3 @@
-
-
 #include "Cellule.h"
 
 Cellule::Cellule(int x, int y, bool etat_vie){
@@ -16,5 +14,6 @@ bool Cellule::getEtat(){
 void Cellule::setEtat(bool etat){
     etat_vie = etat;
 }
+
 
 

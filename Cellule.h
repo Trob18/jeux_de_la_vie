@@ -1,5 +1,6 @@
 #ifndef CELLULE_H
 #define CELLULE_H
+#include "Cellule_Suivante.h"
 
 class Cellule{
     private :

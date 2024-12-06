@@ -1,11 +1,10 @@
-#include "Cellule.h"
-#include "Grille.h"
 #include "JeuDeLaVieController.h"
+#include <iostream>
 
-int main(){
-
+int main() {
     JeuDeLaVieController test;
     test.ouvertureFichier("fichier.txt");
+    test.startSimulation();
 
     return 0;
 }
