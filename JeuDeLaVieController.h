@@ -5,6 +5,7 @@
 #include <vector>
 #include "Vue.h"
 #include "Vue_Console.h"
+#include "Vue_Graphique.h"
 #include "Grille.h"
 
 class JeuDeLaVieController {

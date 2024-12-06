@@ -5,6 +5,7 @@
 
 class Vue {
 public:
+    virtual void creationFenetre(const std::vector<std::vector<int>>& matrice) = 0;
     virtual void affichage(const std::vector<std::vector<int>>& matrice) = 0;
     virtual ~Vue() = default;
 };

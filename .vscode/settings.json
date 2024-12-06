@@ -45,7 +45,11 @@
         "stdexcept": "cpp",
         "streambuf": "cpp",
         "typeinfo": "cpp",
+<<<<<<< HEAD
         "fstream": "cpp",
         "sstream": "cpp"
+=======
+        "fstream": "cpp"
+>>>>>>> f8fdcacb4ff76fbd3502f290c7b7bf1ccc7c499c
     }
 }
