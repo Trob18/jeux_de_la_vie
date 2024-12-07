@@ -1,8 +1,21 @@
 #include "Vue_Graphique.h"
 
+
+void Vue_Graphique::setDelai(int nouveauDelai){
+    delai = nouveauDelai;
+}
+
+int Vue_Graphique::getDelai(){
+    return delai;
+}
+
+
+
 const bool Vue_Graphique::estFenetreFermee(){
     return fenetreFermee;
 }
+
+
 
 
 void Vue_Graphique::creationFenetre(const std::vector<std::vector<int>>& matrice){
@@ -27,13 +40,14 @@ void Vue_Graphique::affichage(const std::vector<std::vector<int>>& matrice) {
             }
         }
     }
+
     for (int x = 0; x < matrice.size(); ++x) {
         for (int y = 0; y < matrice[x].size(); ++y) {
             cell.setPosition(y * cell_size, x * cell_size);
             if (matrice[x][y] == 1) {
                 cell.setFillColor(sf::Color::Blue);
             } else {
-                cell.setFillColor(sf::Color::Black);
+                cell.setFillColor(sf::Color::White);
             }
             window.draw(cell);
         }
@@ -43,7 +57,18 @@ void Vue_Graphique::affichage(const std::vector<std::vector<int>>& matrice) {
         
 }
 
-    
 
-    
+void Vue_Graphique::bouton(){
+    sf::Event appuie;
+    while (window.pollEvent(appuie)){
+        if (appuie.type == sf::Event::KeyPressed){
+            if(appuie.key.code == sf::Keyboard::Up){
+                delai = std::max(100, delai - 100);
+            } else if(appuie.key.code == sf::Keyboard::Down){
+                delai = std::min(2000, delai + 100);
+            }
+        }
+    }
+}
+
 

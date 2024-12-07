@@ -3,7 +3,11 @@
 
 int main() {
     JeuDeLaVieController test;
-    test.ouvertureFichier("fichier.txt");
+    std::string nom_fichier;
+    std::cout << "Entrer le nom de votre fichier consommable (sans extension) : ";
+    std::cin >> nom_fichier;
+    test.setNomFichier(nom_fichier);
+    test.ouvertureFichier(nom_fichier + ".txt");
     test.startSimulation();
 
     return 0;

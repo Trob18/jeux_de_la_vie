@@ -14,12 +14,15 @@ private:
     int hauteur;
     std::vector<int> matrice;
     Grille grille;
+    std::string nom_fichier_base;
+
     
 public: 
     void startSimulation();
     void ouvertureFichier(const std::string &chemin);
     void setCellule(int x, int y, bool etat);
     void afficherGrille();
+    void setNomFichier(std::string &nom);
 };
 
 #endif
