@@ -24,6 +24,7 @@ public:
     void setCellule(int x, int y, bool etat);
     void afficherGrille();
     void setNomFichier(std::string &nom);
-};
+    bool testUnitaire(std::string &fichierEntree, std::string &fichierSortieAttendu);
 
+};
 #endif

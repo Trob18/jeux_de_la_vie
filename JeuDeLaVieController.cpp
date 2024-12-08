@@ -56,6 +56,7 @@ void JeuDeLaVieController::startSimulation() {
     Vue* display = nullptr;
     int touche;
     int finis=false;
+    
 
     
     std::ofstream fichier_sortie(nom_fichier_base + "_out.txt");
@@ -146,3 +147,31 @@ void JeuDeLaVieController::startSimulation() {
     }  
    fichier_sortie.close(); 
 }
+
+bool JeuDeLaVieController::testUnitaire(std::string &fichierEntree, std::string &fichierSortieAttendu){
+    ouvertureFichier(fichierEntree);
+
+    std::vector<std::vector<int>> matrice = grille.getMatrice();
+    for(int i = 1; i < 30; i++){
+        matrice = grille.nouvGrille(matrice);
+    }
+
+    std::ifstream fichierTest(fichierSortieAttendu);
+    if (!fichierTest.is_open()) {
+            std::cerr << "Erreur : impossible d'ouvrir le fichier de test.\n";
+            return false;
+        }
+
+        int hauteur;
+        int largeur;
+        fichierTest >> hauteur >> largeur;
+
+        std::vector<std::vector<int>> matriceAttendue(hauteur, std::vector<int>(largeur));
+         for (int x = 0; x < hauteur; x++) {
+            for (int y = 0; y < largeur; y++) {
+                fichierTest >> matriceAttendue[x][y];
+            }
+        }
+
+        return matrice == matriceAttendue;
+    }
