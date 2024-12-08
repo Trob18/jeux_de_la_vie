@@ -113,19 +113,29 @@ void JeuDeLaVieController::startSimulation() {
             Vue_Graphique* display = new Vue_Graphique();
             std::vector<std::vector<int>> matrice = grille.nouvGrille(grille.getMatrice());
             std::vector<std::vector<int>> matriceObstacle = grille.nouvGrilleObstacle(grille.getMatriceObstacle());
+            std::vector<std::vector<int>> matricePrecedente;
+            bool simulation = false;
             display->creationFenetre(matrice);
             display->affichage(matrice, matriceObstacle);
             sf::sleep(sf::milliseconds(500));
             display->setDelai(500);
-            while (finis==false) {
+            while (finis == false && simulation == false) {
                 if (display->estFenetreFermee()==true){
                     finis=true;
                     continue;
                 }
                 display->bouton();
+                matricePrecedente = matrice;
                 matrice = grille.nouvGrille(matrice);
                 display->affichage(matrice, matriceObstacle);
                 
+                if(matrice == matricePrecedente){
+                    simulation = true;
+                    display->~Vue_Graphique();
+                }
+
+
+
                 sf::sleep(sf::milliseconds(display->getDelai()));
             } 
             delete display;
