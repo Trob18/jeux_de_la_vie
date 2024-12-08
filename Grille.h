@@ -9,6 +9,7 @@ private:
     int largeur;
     int hauteur;
     std::vector<std::vector<int>> matrice;
+    std::vector<std::vector<int>> matriceObstacle;
 
 public : 
     Grille(int largeur = 0, int hauteur = 0);
@@ -18,7 +19,9 @@ public :
     void updateGrille();
     void afficher();
     std::vector<std::vector<int>> getMatrice() const { return matrice; }
+    std::vector<std::vector<int>> getMatriceObstacle() const { return matriceObstacle; }
     std::vector<std::vector<int>> nouvGrille(const std::vector<std::vector<int>>& matrice);
+    std::vector<std::vector<int>> nouvGrilleObstacle(const std::vector<std::vector<int>>& matriceObstacle);
 };
 
 #endif

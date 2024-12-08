@@ -15,13 +15,11 @@ private:
 
 public:
     void creationFenetre(const std::vector<std::vector<int>>& matrice);
-    void affichage(const std::vector<std::vector<int>>& matrice);
+    void affichage(const std::vector<std::vector<int>>& matrice, std::vector<std::vector<int>> matriceObstacle);
     const bool estFenetreFermee();
     void bouton();
     int getDelai();
     void setDelai(int nouveauDelai);
-
-
 };
 
 #endif

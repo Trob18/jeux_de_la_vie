@@ -13,6 +13,7 @@ private:
     int largeur;
     int hauteur;
     std::vector<int> matrice;
+    std::vector<int> matriceObstacle;
     Grille grille;
     std::string nom_fichier_base;
 

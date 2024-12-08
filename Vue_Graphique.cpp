@@ -1,6 +1,7 @@
 #include "Vue_Graphique.h"
 
 
+
 void Vue_Graphique::setDelai(int nouveauDelai){
     delai = nouveauDelai;
 }
@@ -26,28 +27,29 @@ void Vue_Graphique::creationFenetre(const std::vector<std::vector<int>>& matrice
     );
 }
 
-void Vue_Graphique::affichage(const std::vector<std::vector<int>>& matrice) {
+void Vue_Graphique::affichage(const std::vector<std::vector<int>>& matrice, std::vector<std::vector<int>> matriceObstacle) {
     int cell_size = 20;
     sf::RectangleShape cell(sf::Vector2f(cell_size, cell_size));
 
-    sf::Event event;
+    sf::Event fermee;
     if (window.isOpen()) {
-        while (window.pollEvent(event)) {
-            if (event.type == sf::Event::Closed) {
+        while (window.pollEvent(fermee)) {
+            if (fermee.type == sf::Event::Closed) {
                 window.close();
                 fenetreFermee = true;
                 return;
             }
         }
     }
-
     for (int x = 0; x < matrice.size(); ++x) {
         for (int y = 0; y < matrice[x].size(); ++y) {
             cell.setPosition(y * cell_size, x * cell_size);
-            if (matrice[x][y] == 1) {
+            if (matriceObstacle[x][y] == 2) {
+                cell.setFillColor(sf::Color::Green);
+            }else if (matrice[x][y] == 1) {
                 cell.setFillColor(sf::Color::Blue);
             } else {
-                cell.setFillColor(sf::Color::White);
+                cell.setFillColor(sf::Color::Black);
             }
             window.draw(cell);
         }

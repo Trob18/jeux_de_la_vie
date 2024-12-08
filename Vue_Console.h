@@ -7,7 +7,7 @@
 class Vue_Console : public Vue {
 public:
     void creationFenetre(const std::vector<std::vector<int>>& matrice);
-    void affichage(const std::vector<std::vector<int>>& matrice) override;
+    void affichage(const std::vector<std::vector<int>>& matrice, std::vector<std::vector<int>> matriceObstacle) override;
 };
 
 #endif
