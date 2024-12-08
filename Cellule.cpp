@@ -14,7 +14,3 @@ bool Cellule::getEtat(){
 void Cellule::setEtat(bool etat){
     etat_vie = etat;
 }
-
-
-
-jksjksjkfgjgf
