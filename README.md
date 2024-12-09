@@ -48,7 +48,7 @@ Pré requis :
 Vous pouvez le faire via votre terminal avec la commande :
 `touch <nom_fichier_arbitraire>.txt`
 Exemple de ce qui est attendu dans votre fichier : 
-
+`
 10 10
 0 0 1 0 0 0 0 0 0 0
 0 0 0 1 0 0 0 0 0 0
@@ -60,7 +60,7 @@ Exemple de ce qui est attendu dans votre fichier :
 0 0 0 0 0 0 0 0 0 0
 0 0 0 0 0 0 0 0 0 0
 0 0 0 0 0 0 0 0 0 0
-
+`
 
 ---
 
