@@ -101,6 +101,12 @@ Le programme appelle alors la méthode d'affichage du mode graphique pour créer
         * La flèche du bas pour le réduire.
 
 
+* **Test unitaire**
+
+Nous avons mis en place un système de **tests unitaires** pour garantir la fiabilité et la stabilité de notre programme. Ce système compare le fichier de sortie généré par une simulation du jeu de la vie avec le fichier de sortie attendu, en utilisant le même fichier d'entrée. Un test est intégré directement dans notre fichier `main.cpp`, et la simulation ne démarre que si ce test est validé. En cas d'échec, cela indique que notre programme n'est pas capable de produire une simulation correcte du jeu de la vie, ce qui entraîne l'arrêt immédiat de la simulation. Ce test vise à offrir aux utilisateurs une garantie de la fiabilité et de la robustesse de notre application.
+
+
+
 
 
 
