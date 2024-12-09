@@ -48,6 +48,7 @@ Pré requis :
 Vous pouvez le faire via votre terminal avec la commande :
 `touch <nom_fichier_arbitraire>.txt`
 Exemple de ce qui est attendu dans votre fichier : 
+
 ![image](https://github.com/user-attachments/assets/aebf96d9-1dd3-4a66-a1d7-db603c8addeb)
 
 
